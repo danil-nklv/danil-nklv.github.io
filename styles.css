@@ -1,0 +1,229 @@
+body {
+    font-family:'Minecraft Rus Regular', sans-serif;
+    text-align: center;
+    padding-top: 50px;
+    background-color: #2c2b2b;
+    background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+    color: aliceblue;
+   
+}
+
+.Title {
+margin: 20px;
+}
+
+@font-face {
+	font-family: 'Minecraft Rus Regular';
+	src: url('/fonts/minecraft_rus_regular.eot'); /* IE 9 Compatibility Mode */
+	src: url('/fonts/minecraft_rus_regular.eot?#iefix') format('embedded-opentype'), /* IE < 9 */
+		url('/fonts/minecraft_rus_regular.woff2') format('woff2'), /* Super Modern Browsers */
+		url('/fonts/minecraft_rus_regular.woff') format('woff'), /* Firefox >= 3.6, any other modern browser */
+		url('/fonts/minecraft_rus_regular.ttf') format('truetype'), /* Safari, Android, iOS */
+		url('/fonts/minecraft_rus_regular.svg#minecraft_rus_regular') format('svg'); /* Chrome < 4, Legacy iOS */
+}
+
+
+.container {
+    display: flex;
+    flex-wrap: wrap; /* Добавлено свойство переноса */
+    gap: 50px; /* Отступы между SoundContainer */
+    max-width: 600px; /* Максимальная ширина контента */
+    margin: 20px auto; /* Центрирование контейнера по горизонтали */
+    padding: 0 20px; /* Отступы слева и справа */
+    border-radius: 25px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* Для поддержки в Safari */
+}
+
+
+
+
+.SoundContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px 0;
+    
+    
+}
+
+
+.slider-container input[type="range"] {
+    width: 70px; /* Установите нужную ширину */
+}
+
+.icon img {
+    width: 70px;  /*  ширина иконок */
+    height: auto;  
+    display: block;
+    margin: 0 auto;   
+}
+
+input[type="range"] {
+    -webkit-appearance: none; /* Отключаем стандартное оформление */
+    width: 100%;
+    height: 5px;
+    background: #ffffff; /* Цвет полосы */
+    border-radius: 5px; /* Скругление полосы */
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px; /* Ширина ползунка */
+    height: 20px; /* Высота ползунка */
+    background: #aaf4ba; /* Цвет ползунка */
+    border-radius: 30%; /* Делает ползунок квадратом */
+    cursor: pointer; /* Курсор при наведении */
+}
+/* Для mozilla */
+input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #aaf4ba;
+    border-radius: 30%;
+    cursor: pointer;
+}
+
+.info {
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    line-height: 1.5;
+}
+
+/* Медиа-запрос для более широких экранов (планшеты и десктопы) */
+@media (min-width: 768px) {
+    .info {
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+}
+
+/* Медиа-запрос для еще больших экранов */
+@media (min-width: 1024px) {
+    .info {
+        margin-left: 300px;
+        margin-right: 300px;
+    }
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    font-size: 12px;
+  }
+
+
+
+
+
+.ios7-switch {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    tap-highlight-color: transparent;
+}
+
+.ios7-switch input {
+    opacity: 0;
+    position: absolute;
+    
+}
+
+.ios7-switch input + span {
+    position: relative;
+    display: inline-block;
+    width: 1.65em;
+    height: 1em;
+    background: white;
+    box-shadow: inset 0 0 0 0.0625em #e9e9e9;
+    border-radius: 0.5em;
+    vertical-align: -0.15em;
+    transition: all 0.40s cubic-bezier(.17,.67,.43,.98);
+}
+
+.ios7-switch:active input + span,
+.ios7-switch input + span:active {
+    box-shadow: inset 0 0 0 0.73em #e9e9e9;
+}
+
+.ios7-switch input + span:after {
+    position: absolute;
+    display: block;
+    content: '';
+    width: 0.875em;
+    height: 0.875em;
+    border-radius: 0.4375em;
+    top: 0.0625em;
+    left: 0.0625em;
+    background: white;
+    box-shadow: inset 0 0 0 0.03em rgba(0,0,0,0.1),
+                0 0 0.05em rgba(0,0,0,0.05),
+                0 0.1em 0.2em rgba(0,0,0,0.2);
+    transition: all 0.25s ease-out;
+}
+
+.ios7-switch:active input + span:after,
+.ios7-switch input + span:active:after {
+    width: 1.15em;
+}
+
+.ios7-switch input:checked + span {
+    box-shadow: inset 0 0 0 0.73em #4cd964;
+}
+
+.ios7-switch input:checked + span:after {
+    left: 0.7125em;
+}
+
+.ios7-switch:active input:checked + span:after,
+.ios7-switch input:checked + span:active:after {
+    left: 0.4375em;
+}
+
+/* accessibility styles */
+.ios7-switch input:focus + span:after {
+    box-shadow: inset 0 0 0 0.03em rgba(0,0,0,0.15),
+                0 0 0.05em rgba(0,0,0,0.08),
+                0 0.1em 0.2em rgba(0,0,0,0.3);
+    background: #fff;
+}
+
+.ios7-switch input:focus + span {
+    box-shadow: inset 0 0 0 0.0625em #dadada;
+}
+
+.ios7-switch input:focus:checked + span {
+    box-shadow: inset 0 0 0 0.73em #33be4b;
+}
+
+/* reset accessibility style on hover */
+.ios7-switch:hover input:focus + span:after {
+    box-shadow: inset 0 0 0 0.03em rgba(0,0,0,0.1),
+                0 0 0.05em rgba(0,0,0,0.05),
+                0 0.1em 0.2em rgba(0,0,0,0.2);
+    background: #fff;
+}
+
+.ios7-switch:hover input:focus + span {
+    box-shadow: inset 0 0 0 0.0625em #e9e9e9;
+}
+
+.ios7-switch:hover input:focus:checked + span {
+    box-shadow: inset 0 0 0 0.73em #4cd964;
+}
+
+
+
+
+
