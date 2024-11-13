@@ -1,12 +1,12 @@
 // Загрузка звуков с помощью Howler.js
 var rainSound = new Howl({
-    src: ['/sounds/rain.mp3'], // Путь к звуку дождя
+    src: ['sounds/rain.mp3'], // Путь к звуку дождя
     loop: true, // Звук будет зациклен
     volume: 0 // Начальная громкость (по умолчанию 0)
 });
 
 var fireSound = new Howl({
-    src: ['/sounds/fire.mp3'], // Путь к звуку огня
+    src: ['sounds/fire.mp3'], // Путь к звуку огня
     loop: true, // Звук будет зациклен
     volume: 0 // Начальная громкость (по умолчанию 0)
 });
