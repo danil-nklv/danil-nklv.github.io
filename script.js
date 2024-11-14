@@ -78,6 +78,10 @@ toggleSwitch.addEventListener('change', function() {
     }
 });
 
+document.addEventListener('touchstart', function() {
+    rainSound.play();
+}, { once: true });
+
 
 
 
