@@ -77,11 +77,3 @@ toggleSwitch.addEventListener('change', function() {
         birdsSound.stop();
     }
 });
-
-document.addEventListener('touchstart', function() {
-    rainSound.play();
-}, { once: true });
-
-
-
-
