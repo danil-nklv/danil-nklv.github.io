@@ -5,6 +5,7 @@ body {
     background-color: #2c2b2b;
     background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
     color: aliceblue;
+
    
 }
 
@@ -113,9 +114,9 @@ input[type="range"]::-moz-range-thumb {
     position: fixed;
     bottom: 0;
     width: 100%;
-    text-align: center;
-    padding: 10px;
-    font-size: 12px;
+    text-align: s;
+    padding: 0%;
+    font-size: 12px;    
   }
 
 
