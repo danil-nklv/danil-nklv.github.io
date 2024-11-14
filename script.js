@@ -2,15 +2,13 @@
 var rainSound = new Howl({
     src: ['sounds/rain1.mp3'], // Путь к звуку дождя
     loop: true, // Звук будет зациклен
-    volume: 0 // Начальная громкость (по умолчанию 0)
-    html5: true
+    volume: 0 // Начальная громкость (по умолчанию 0)    
 });
 
 var fireSound = new Howl({
     src: ['sounds/fire1.mp3'], // Путь к звуку огня
     loop: true, // Звук будет зациклен
-    volume: 0 // Начальная громкость (по умолчанию 0)
-    html5: true
+    volume: 0 // Начальная громкость (по умолчанию 0)    
 });
 
 var birdsSound = new Howl({
