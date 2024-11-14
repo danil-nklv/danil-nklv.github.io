@@ -1,14 +1,31 @@
-// Загрузка звуков с помощью Howler.js
+// Получаем элемент индикатора загрузки
+var loader = document.getElementById('loader');
+
+// Функция для показа индикатора загрузки
+function showLoader() {
+    loader.style.display = 'block';
+}
+
+// Функция для скрытия индикатора загрузки
+function hideLoader() {
+    loader.style.display = 'none';
+}
+
+// Загрузка звуков с помощью Howler.js с добавлением индикатора загрузки
 var rainSound = new Howl({
     src: ['sounds/rain1.mp3'], // Путь к звуку дождя
     loop: true, // Звук будет зациклен
-    volume: 0 // Начальная громкость (по умолчанию 0)
+    volume: 0, // Начальная громкость (по умолчанию 0)
+    onloadstart: showLoader,  // Показываем индикатор при старте загрузки
+    onload: hideLoader        // Скрываем индикатор после загрузки
 });
 
 var fireSound = new Howl({
     src: ['sounds/fire1.mp3'], // Путь к звуку огня
     loop: true, // Звук будет зациклен
-    volume: 0 // Начальная громкость (по умолчанию 0)
+    volume: 0, // Начальная громкость (по умолчанию 0)
+    onloadstart: showLoader,
+    onload: hideLoader
 });
 
 // Получаем элементы ползунков и переключателя
@@ -56,3 +73,8 @@ toggleSwitch.addEventListener('change', function() {
         fireSound.stop();
     }
 });
+
+
+
+
+
