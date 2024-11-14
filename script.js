@@ -11,9 +11,16 @@ var fireSound = new Howl({
     volume: 0 // Начальная громкость (по умолчанию 0)
 });
 
+var birdsSound = new Howl({
+    src: ['sounds/birds.mp3'], // Путь к звуку огня
+    loop: true, // Звук будет зациклен
+    volume: 0 // Начальная громкость (по умолчанию 0)
+});
+
 // Получаем элементы ползунков и переключателя
 var rainSlider = document.getElementById('rainSlider');
 var fireSlider = document.getElementById('fireSlider');
+var birdsSlider = document.getElementById('birdsSlider');
 var toggleSwitch = document.querySelector('.ios7-switch input');
 
 // Обработчик для ползунка дождя
@@ -40,10 +47,22 @@ fireSlider.addEventListener('input', function() {
     updateSwitchState();
 });
 
+// Обработчик для ползунка птицы
+birdsSlider.addEventListener('input', function() {
+    var volume = birdsSlider.value / 100; // Преобразуем значение ползунка в диапазон от 0 до 1
+    birdsSound.volume(volume); // Устанавливаем громкость для огня
+    if (volume > 0 && !birdsSound.playing()) {
+        birdsSound.play(); // Запускаем звук, если громкость больше 0
+    } else if (volume === 0) {
+        birdsSound.stop(); // Останавливаем звук, если громкость равна 0
+    }
+    updateSwitchState();
+});
+
 // Функция для обновления состояния переключателя
 function updateSwitchState() {
     // Если хотя бы один ползунок активен, включаем переключатель
-    toggleSwitch.checked = rainSlider.value > 0 || fireSlider.value > 0;
+    toggleSwitch.checked = rainSlider.value > 0 || fireSlider.value > 0 || birdsSlider.value > 0;
 }
 
 // Обработчик изменения состояния переключателя
@@ -52,8 +71,10 @@ toggleSwitch.addEventListener('change', function() {
         // Если переключатель выключен, сбрасываем ползунки и останавливаем звуки
         rainSlider.value = 0;
         fireSlider.value = 0;
+        birdsSlider.value = 0;
         rainSound.stop();
         fireSound.stop();
+        birdsSound.stop();
     }
 });
 
