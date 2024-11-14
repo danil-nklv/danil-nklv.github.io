@@ -6,7 +6,7 @@ var rainSound = new Howl({
 });
 
 var fireSound = new Howl({
-    src: ['sounds/fire.mp3'], // Путь к звуку огня
+    src: ['sounds/fire1.mp3'], // Путь к звуку огня
     loop: true, // Звук будет зациклен
     volume: 0 // Начальная громкость (по умолчанию 0)
 });
