@@ -31,6 +31,7 @@ margin: 20px;
     max-width: 600px; /* Максимальная ширина контента */
     margin: 20px auto; /* Центрирование контейнера по горизонтали */
     padding: 0 20px; /* Отступы слева и справа */
+    justify-content: center;
     border-radius: 25px;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px); /* Для поддержки в Safari */
