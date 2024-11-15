@@ -1,29 +1,25 @@
 var rainSound = new Howl({
     src: ['sounds/rain1.mp3'], // Путь к звуку дождя
     loop: true, // Звук будет зациклен
-    volume: 0 // Начальная громкость 
-    html5: true // Принудительное использование HTML5 Audio
+    volume: 0 // Начальная громкость     
 });
 
 var wavesSound = new Howl({
     src: ['sounds/waves.mp3'], // Путь к звуку огня
     loop: true, // Звук будет зациклен
-    volume: 0 // Начальная громкость 
-    html5: true // Принудительное использование HTML5 Audio
+    volume: 0 // Начальная громкость     
 });
 
 var fireSound = new Howl({
     src: ['sounds/fire1.mp3'], // Путь к звуку огня
     loop: true, // Звук будет зациклен
-    volume: 0 // Начальная громкость 
-    html5: true // Принудительное использование HTML5 Audio
+    volume: 0 // Начальная громкость     
 });
 
 var birdsSound = new Howl({
     src: ['sounds/birds.mp3'], // Путь к звуку огня
     loop: true, // Звук будет зациклен
     volume: 0 // Начальная громкость 
-    html5: true // Принудительное использование HTML5 Audio
 });
 
 
