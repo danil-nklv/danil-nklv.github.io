@@ -1,3 +1,13 @@
+// Создаём бесшумное HTML5-аудио
+var silentAudio = new Audio('data:audio/mp3;base64,//uQxAA...');
+silentAudio.loop = true; // Зацикливаем трек
+silentAudio.volume = 0;  // Устанавливаем громкость в 0
+
+// Функция активации бесшумного аудио
+function enableSilentAudio() {
+    silentAudio.play().catch((e) => console.warn('Silent audio play failed:', e));
+}
+
 var rainSound = new Howl({
     src: ['sounds/rain1.mp3'], // Путь к звуку дождя
     loop: true, // Звук будет зациклен
@@ -20,6 +30,15 @@ var birdsSound = new Howl({
     src: ['sounds/birds.mp3'], // Путь к звуку огня
     loop: true, // Звук будет зациклен
     volume: 0 // Начальная громкость 
+});
+
+// Активируем бесшумное аудио при взаимодействии пользователя
+document.body.addEventListener('click', function() {
+    enableSilentAudio(); // Запускаем бесшумное аудио
+    rainSound.play();    // Запускаем звуки через Web Audio
+    wavesSound.play();
+    birdsSound.play();
+    fireSound.play();
 });
 
 
