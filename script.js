@@ -1,3 +1,4 @@
+Howler.mobileAutoEnable = true; // Включает поддержку на мобильных устройствах
 // Загрузка звуков с помощью Howler.js
 var rainSound = new Howl({
     src: ['sounds/rain1.mp3'], // Путь к звуку дождя
