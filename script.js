@@ -1,29 +1,3 @@
-// Включаем поддержку мобильных устройств для Howler.js
-Howler.mobileAutoEnable = true;
-
-// Проверка для iOS
-function isIOS() {
-    return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-}
-
-// Инициализация звуков после взаимодействия пользователя
-function enableSounds() {
-    rainSound.play(); // Попытка воспроизведения звука дождя
-    fireSound.play(); // Попытка воспроизведения звука огня
-
-    // Проверяем, играют ли звуки
-    if (rainSound.playing() || fireSound.playing()) {
-        console.log("Звуки активированы");
-    } else if (isIOS()) {
-        alert("На iOS звуки могут не воспроизводиться в беззвучном режиме. Пожалуйста, выключите его.");
-    }
-
-    // Убираем обработчик после активации звуков
-    document.body.removeEventListener('click', enableSounds);
-}
-
-// Добавляем обработчик клика на тело страницы
-document.body.addEventListener('click', enableSounds);
 var rainSound = new Howl({
     src: ['sounds/rain1.mp3'], // Путь к звуку дождя
     loop: true, // Звук будет зациклен
