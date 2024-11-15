@@ -51,11 +51,11 @@ margin: 20px;
 
 
 .slider-container input[type="range"] {
-    width: 70px; /* Установите нужную ширину */
+    width: 70px; 
 }
 
 .icon img {
-    width: 70px;  /*  ширина иконок */
+    width: 70px;  
     height: auto;  
     display: block;
     margin: 0 auto;   
