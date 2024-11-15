@@ -1,3 +1,8 @@
+document.body.addEventListener('click', function() {
+    rainSound.play();
+    fireSound.play();
+});
+
 Howler.mobileAutoEnable = true; // Включает поддержку на мобильных устройствах
 // Загрузка звуков с помощью Howler.js
 var rainSound = new Howl({
