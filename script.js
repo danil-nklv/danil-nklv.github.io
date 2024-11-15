@@ -1,51 +1,27 @@
-Howler.mobileAutoEnable = true;
-
-// Создаём бесшумный HTML5-аудиотрек
-const silentAudio = new Audio('data:audio/mp3;base64,//uQxAA...');
-silentAudio.loop = true; // Цикличное воспроизведение
-silentAudio.volume = 0.001; // Устанавливаем минимальную громкость
-silentAudio.playbackRate = 1;
-
-// Функция для запуска бесшумного трека
-function enableSilentAudio() {
-    silentAudio.play().catch((e) => {
-        console.warn('Silent audio playback failed:', e);
-    });
-}
-
-// Запускаем бесшумный трек при запуске Web Audio
-document.body.addEventListener('click', function startSilentAudio() {
-    enableSilentAudio(); // Активируем бесшумный трек
-    document.body.removeEventListener('click', startSilentAudio); // Удаляем обработчик
-});
-
 var rainSound = new Howl({
     src: ['sounds/rain1.mp3'], // Путь к звуку дождя
     loop: true, // Звук будет зациклен
-    volume: 0 // Начальная громкость 
-    html5: true
+    volume: 0 // Начальная громкость     
 });
 
 var wavesSound = new Howl({
     src: ['sounds/waves.mp3'], // Путь к звуку огня
     loop: true, // Звук будет зациклен
-    volume: 0 // Начальная громкость    
-    html5: true
+    volume: 0 // Начальная громкость     
 });
 
 var fireSound = new Howl({
     src: ['sounds/fire1.mp3'], // Путь к звуку огня
     loop: true, // Звук будет зациклен
-    volume: 0 // Начальная громкость    
-    html5: true
+    volume: 0 // Начальная громкость     
 });
 
 var birdsSound = new Howl({
     src: ['sounds/birds.mp3'], // Путь к звуку огня
     loop: true, // Звук будет зациклен
     volume: 0 // Начальная громкость 
-    html5: true
 });
+
 
 // Получаем элементы ползунков и переключателя
 var rainSlider = document.getElementById('rainSlider');
