@@ -10,11 +10,21 @@ body {
    
 }
 
-html {
-    height: 100%;
-    margin: 0;
+.wrapper {
     display: flex;
     flex-direction: column;
+    min-height: 100%; /* Заставляет wrapper занимать весь экран */
+}
+
+.content {
+    flex: 1; /* Основной контент занимает всё доступное пространство */
+}
+
+html, body {
+    height: 100%; /* Устанавливаем высоту на весь экран */
+    margin: 0; /* Убираем стандартные отступы */
+    display: flex;
+    flex-direction: column; /* Делаем тело страницы флекс-контейнером */
 }
 
 .Title {
@@ -34,15 +44,16 @@ margin: 20px;
 
 .container {
     display: flex;
-    flex-wrap: wrap; /* Добавлено свойство переноса */
-    gap: 50px; /* Отступы между SoundContainer */
+    flex-wrap: wrap; /* Перенос элементов на новую строку */
+    justify-content: center; /* Центровка элементов в каждой строке */
+    row-gap: 20px; /* Вертикальные отступы между SoundContainer */
+    column-gap: 60px; /* Горизонтальные отступы между SoundContainer */
     max-width: 600px; /* Максимальная ширина контента */
     margin: 20px auto; /* Центрирование контейнера по горизонтали */
     padding: 0 20px; /* Отступы слева и справа */
-    justify-content: center;
     border-radius: 25px;
-    backdrop-filter: blur(7px);
-    -webkit-backdrop-filter: blur(7px); /* Для поддержки в Safari */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* Для Safari */
 }
 
 
@@ -52,7 +63,7 @@ margin: 20px;
     display: flex;
     align-items: center;
     flex-direction: column;
-    margin: 20px 0;
+    margin: 20px 0px ;
     
     
 }
@@ -120,12 +131,9 @@ input[type="range"]::-moz-range-thumb {
 }
 
 .footer {
-    
-    bottom: 0;
-    width: 100%;
-    text-align: s;
-    padding: 0%;
-    font-size: 12px;    
+    text-align: center;
+    padding: 10px;
+    font-size: 12px;   
   }
 
   .image-highlight:hover {
