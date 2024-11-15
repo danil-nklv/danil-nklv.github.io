@@ -10,6 +10,13 @@ body {
    
 }
 
+html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
 .Title {
 margin: 20px;
 }
@@ -113,7 +120,7 @@ input[type="range"]::-moz-range-thumb {
 }
 
 .footer {
-    position: fixed;
+    
     bottom: 0;
     width: 100%;
     text-align: s;
