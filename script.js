@@ -1,3 +1,5 @@
+Howler.mobileAutoEnable = true;
+
 // Создаём бесшумный HTML5-аудиотрек
 const silentAudio = new Audio('data:audio/mp3;base64,//uQxAA...');
 silentAudio.loop = true; // Цикличное воспроизведение
