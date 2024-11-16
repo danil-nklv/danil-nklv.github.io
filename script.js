@@ -99,6 +99,91 @@ toggleSwitch.addEventListener('change', function() {
     }
 });
 
+// ТАЙМЕР
+const timerIcon = document.getElementById("timerIcon");
+const timerPanel = document.getElementById("timerPanel");
+const timerInput = document.getElementById("timerInput");
+const startTimerButton = document.getElementById("startTimer");
+const countdownDisplay = document.getElementById("countdownDisplay");
+
+let timer;
+let countdownInterval;
+
+// Открыть/закрыть панель таймера
+function toggleTimerPanel() {
+    timerPanel.style.display = timerPanel.style.display === "block" ? "none" : "block";
+    countdownDisplay.textContent = ""; // Сбрасываем обратный отсчёт
+}
+
+// Запуск таймера
+function startTimer() {
+    clearTimeout(timer);
+    clearInterval(countdownInterval);
+
+    const minutes = parseInt(timerInput.value, 10);
+    if (isNaN(minutes) || minutes <= 0) {
+        countdownDisplay.textContent = "Введите корректное количество минут.";
+        return;
+    }
+
+    const endTime = Date.now() + minutes * 60 * 1000;
+    countdownDisplay.textContent = `Осталось: ${formatTime(minutes * 60)}`;
+
+    countdownInterval = setInterval(() => {
+        const timeLeft = Math.max(0, Math.floor((endTime - Date.now()) / 1000));
+        countdownDisplay.textContent = `Осталось: ${formatTime(timeLeft)}`;
+        if (timeLeft <= 0) {
+            clearInterval(countdownInterval);
+        }
+    }, 1000);
+
+    timer = setTimeout(() => {
+        stopAllSounds();
+        toggleTimerPanel(); // Закрываем панель после завершения
+    }, minutes * 60 * 1000);
+}
+
+// Остановить все звуки
+function stopAllSounds() {
+    Howler.stop(); // Остановка всех звуков через Howler.js
+}
+
+// Форматирование времени в формате MM:SS
+function formatTime(seconds) {
+    const mins = Math.floor(seconds / 60);
+    const secs = seconds % 60;
+    return `${mins}:${secs.toString().padStart(2, "0")}`;
+}
+
+// Слушатели событий
+timerIcon.addEventListener("click", toggleTimerPanel);
+startTimerButton.addEventListener("click", startTimer);
+
+const cancelTimerButton = document.getElementById("cancelTimer");
+
+// Отменить таймер
+function cancelTimer() {
+    clearTimeout(timer); // Останавливаем таймер
+    clearInterval(countdownInterval); // Останавливаем обратный отсчёт
+    countdownDisplay.textContent = ""; // Очищаем текст обратного отсчёта
+    toggleTimerPanel(); // Закрываем панель
+}
+
+// Слушатели событий
+cancelTimerButton.addEventListener("click", cancelTimer);
+
+const decreaseTimeButton = document.getElementById("decreaseTime");
+const increaseTimeButton = document.getElementById("increaseTime");
+
+decreaseTimeButton.addEventListener("click", () => {
+    const currentValue = parseInt(timerInput.value, 10);
+    timerInput.value = Math.max(currentValue - 1, timerInput.min);
+});
+
+increaseTimeButton.addEventListener("click", () => {
+    const currentValue = parseInt(timerInput.value, 10);
+    timerInput.value = Math.min(currentValue + 1, timerInput.max);
+});
 
 
 

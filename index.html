@@ -21,7 +21,21 @@
         <input type="checkbox" id="soundToggle">
         <span></span>
     </label>
+    
 </div>
+<button id="timerIcon" class="timer-icon">&#128338</button>
+<div id="timerPanel" class="timer-panel" style="display: none;">
+    <label for="timerInput">Таймер (минуты):</label>
+    <div class="input-container">
+        <button id="decreaseTime" class="time-button">-</button>
+        <input type="number" id="timerInput" min="1" max="60" value="5">
+        <button id="increaseTime" class="time-button">+</button>
+    </div>
+    <button id="startTimer">Запустить</button>
+    <button id="cancelTimer">Отменить</button>
+</div>
+
+<div id="countdownDisplay" class="countdown"></div>
 
 <div class="container">
 
