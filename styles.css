@@ -26,8 +26,9 @@ html, body {
     flex-direction: column; /* Делаем тело страницы флекс-контейнером */
 }
 
-.Title {
+.Title h1 {
 margin: 20px;
+font-size: 50px;
 }
 
 @font-face {
@@ -164,53 +165,54 @@ input[type="range"]::-moz-range-thumb {
 .ios7-switch input + span {
     position: relative;
     display: inline-block;
-    width: 1.65em;
-    height: 1em;
+    width: 3em; /* Увеличение ширины */
+    height: 1.8em; /* Увеличение высоты */
     background: white;
-    box-shadow: inset 0 0 0 0.0625em #e9e9e9;
-    border-radius: 0.5em;
+    box-shadow: inset 0 0 0 0.1em #e9e9e9;
+    border-radius: 0.9em;
     vertical-align: -0.15em;
     transition: all 0.40s cubic-bezier(.17,.67,.43,.98);
 }
 
 .ios7-switch:active input + span,
 .ios7-switch input + span:active {
-    box-shadow: inset 0 0 0 0.73em #e9e9e9;
+    box-shadow: inset 0 0 0 1em #e9e9e9;
 }
 
 .ios7-switch input + span:after {
     position: absolute;
     display: block;
     content: '';
-    width: 0.875em;
-    height: 0.875em;
-    border-radius: 0.4375em;
-    top: 0.0625em;
-    left: 0.0625em;
+    width: 1.6em; /* Увеличение ширины кнопки */
+    height: 1.6em; /* Увеличение высоты кнопки */
+    border-radius: 0.8em;
+    top: 0.1em; /* Корректировка отступов */
+    left: 0.1em;
     background: white;
-    box-shadow: inset 0 0 0 0.03em rgba(0,0,0,0.1),
-                0 0 0.05em rgba(0,0,0,0.05),
-                0 0.1em 0.2em rgba(0,0,0,0.2);
+    box-shadow: inset 0 0 0 0.05em rgba(0,0,0,0.1),
+                0 0 0.1em rgba(0,0,0,0.05),
+                0 0.2em 0.4em rgba(0,0,0,0.2);
     transition: all 0.25s ease-out;
 }
 
 .ios7-switch:active input + span:after,
 .ios7-switch input + span:active:after {
-    width: 1.15em;
+    width: 2em;
 }
 
 .ios7-switch input:checked + span {
-    box-shadow: inset 0 0 0 0.73em #4cd964;
+    box-shadow: inset 0 0 0 1em #4cd964;
 }
 
 .ios7-switch input:checked + span:after {
-    left: 0.7125em;
+    left: 1.3em; /* Корректировка положения кнопки */
 }
 
 .ios7-switch:active input:checked + span:after,
 .ios7-switch input:checked + span:active:after {
-    left: 0.4375em;
+    left: 0.9em;
 }
+
 
 /* accessibility styles */
 .ios7-switch input:focus + span:after {
@@ -225,7 +227,7 @@ input[type="range"]::-moz-range-thumb {
 }
 
 .ios7-switch input:focus:checked + span {
-    box-shadow: inset 0 0 0 0.73em #33be4b;
+    box-shadow: inset 0 0 0 2em #33be4b;
 }
 
 /* reset accessibility style on hover */
@@ -241,5 +243,5 @@ input[type="range"]::-moz-range-thumb {
 }
 
 .ios7-switch:hover input:focus:checked + span {
-    box-shadow: inset 0 0 0 0.73em #4cd964;
+    box-shadow: inset 0 0 0 2em #4cd964;
 }
